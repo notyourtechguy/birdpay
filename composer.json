@@ -25,5 +25,11 @@
         }
     },
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "paymaya/paymaya-sdk": "^0.0.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.1",
+        "orchestra/testbench": "^3.6"
+    }
 }
