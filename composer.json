@@ -1,0 +1,29 @@
+{
+    "name": "notyourtechguy/birdpay",
+    "description": "Paymaya integration with laravel 5.6",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arki Valencia II",
+            "email": "arkivalenciaii@notyourtechguy.me"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Notyourtechguy\\Birdpay\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Notyourtechguy\\Birdpay\\BirdpayServiceProvider"
+            ],
+            "aliases": {
+                "Birdpay": "Notyourtechguy\\Birdpay\\BirdpayFacade"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {}
+}
