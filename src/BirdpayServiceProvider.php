@@ -28,6 +28,10 @@ class BirdpayServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(BirdpayService::class, function() {
+            return new BirdpayService();
+        });
+
+        $this->app->alias(BirdpayService::class, 'birdpay');
     }
 }
