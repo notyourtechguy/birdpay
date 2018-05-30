@@ -6,7 +6,6 @@ use Illuminate\Support\ServiceProvider;
 
 class BirdpayServiceProvider extends ServiceProvider
 {
-    protected $defer = true;
     /**
      * Bootstrap services.
      *
@@ -16,9 +15,9 @@ class BirdpayServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/../config/birdpay.php' => config_path('birdpay.php'),
-        ]);
+        ], 'config');
 
-        $this->loadRoutesFrom(__DIR__ . '/routes.php');
+//        $this->loadRoutesFrom(__DIR__ . '/routes.php');
     }
 
     /**
@@ -28,7 +27,7 @@ class BirdpayServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(BirdpayService::class, function() {
+        $this->app->bind(BirdpayService::class, function() {
             return new BirdpayService();
         });
 
